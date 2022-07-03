@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../my_first_screens/widgets/widgets.dart';
+import '../screens.dart';
 
 class MyFirstScreen extends StatelessWidget {
   const MyFirstScreen({Key? key}) : super(key: key);
@@ -9,8 +8,24 @@ class MyFirstScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text("My First Screen"),
         ),
+        body: const HelloSection(),
         floatingActionButton: MyFloatingActionButton(
-          onPressed: () => debugPrint("Hello,There 👀"),
+          onPressed: () =>
+              debugPrint("My Floating ActionButton was Pressed 👀"),
         ),
+        persistentFooterButtons: [
+          MyFooterButton(
+            icon: Icons.abc,
+            onPressed: () => debugPrint(""),
+          ),
+          MyFooterButton(
+            icon: Icons.library_add,
+            onPressed: () => debugPrint(""),
+          ),
+          MyFooterButton(
+            icon: Icons.cabin,
+            onPressed: () => debugPrint(""),
+          ),
+        ],
       );
 }
